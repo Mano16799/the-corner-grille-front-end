@@ -1,0 +1,25 @@
+.navigation{
+    background-color: #121618;
+    height: 70px;
+}
+
+.navbar{
+    background-color: #121618;
+    padding: 0;
+}
+
+.navbar a{
+    color: #e99037;
+}
+
+#wooden-background{
+    position: absolute;
+}
+
+#wooden-background img{
+    filter: brightness(60%);
+}
+
+body{
+    background-color: #121618;
+}

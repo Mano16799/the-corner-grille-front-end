@@ -1,0 +1,102 @@
+<section class=" bg-dark">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0" >
+                        <div class="col-md-6 d-none d-xl-block">
+                            <img src="assets/images/Pizza-Shop.jpg" alt="Pizza-Shop" class="pizza-shop" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body p-md-5 text-black">
+                                <p class="text-center h1 fw-bold">Register</p>
+                                <form [formGroup]="registerForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="firstName">First name</label>
+                                                <input type="text" id="firstName"
+                                                    class="form-control form-control-lg" formControlName="firstName"/>
+                                            </div>
+                                        </div>
+
+                                        <!-- validation -->
+                                        <div *ngIf="firstName.touched && firstName.errors?.required" class="invalid">
+                                            First Name is required.
+                                        </div>
+
+                                        <div class="col-md-6 mb-2 ">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="lastName">Last name</label>
+                                                <input type="text" id="lastName"
+                                                    class="form-control form-control-lg" formControlName="lastName"/>
+                                            </div>
+                                        </div>
+
+                                         <!-- validation -->
+                                         <div *ngIf="lastName.touched && lastName.errors?.required" class="invalid">
+                                            Last Name is required.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="address">City</label>
+                                        <input type="text" id="address" class="form-control form-control-lg"  formControlName="address"/>
+                                    </div>
+
+                                    <!-- validation -->
+                                    <div *ngIf="address.touched && address.errors?.required" class="invalid">
+                                        City is required.
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="email">Email ID</label>
+                                        <input type="text" id="email" class="form-control form-control-lg"  formControlName="email"/>
+                                    </div>
+
+                                     <!-- validation -->
+                                     <div *ngIf="email.touched && email.errors?.required" class="invalid">
+                                        email is required.
+                                    </div>
+
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="phone">Phone number</label>
+                                        <input type="number" id="phone" class="form-control form-control-lg"  formControlName="phone"/>
+                                    </div>
+
+                                     <!-- validation -->
+                                     <div *ngIf="phone.touched && phone.errors?.required" class="invalid">
+                                        phone is required.
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 mb-2">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="firstName">Password</label>
+                                                <input type="password" id="password"
+                                                    class="form-control form-control-lg" formControlName="password"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- validation -->
+                                    <div *ngIf="password.touched && password.errors?.required" class="invalid">
+                                        password is required.
+                                    </div>
+
+
+
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <button type="button" class="btn btn-warning btn-lg ms-2"  (click)="register()">Submit form</button>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

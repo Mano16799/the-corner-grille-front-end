@@ -1,0 +1,12 @@
+.pizza-shop{
+    object-fit: cover;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    width: 100%;
+}
+
+.invalid{
+    margin-bottom: 8px;
+    color: red;
+    font-size: 12px;
+}

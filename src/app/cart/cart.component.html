@@ -1,0 +1,11 @@
+<h1 style="margin-top: 100px;">Your Orders</h1>
+<div class="card" style="width: 40%; margin-bottom: 20px;" *ngFor="let order of orders$|async">
+    <div class="card-body" >
+        <h4>Order date: {{order.orderDate}}</h4>
+        <div *ngFor="let pizza of order.pizzaList">
+            <h4>Pizza: {{pizza.pizzaName}}</h4>
+            <h4>Quantity: {{pizza.quantity}}</h4>
+        </div>
+        <h4>Total cost: {{order.totalCost}}</h4>
+    </div>
+</div>

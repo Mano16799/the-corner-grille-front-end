@@ -1,0 +1,9 @@
+.example-card{
+    height: 500px;
+    margin: 20px 10px;
+}
+
+img{
+    height: 160px;
+    object-fit: cover;
+}

@@ -1,0 +1,68 @@
+<div class="container-fluid" style="background-color: #121618;">
+    <div class="row" style="padding-bottom: 100px;">
+        <div class="col-md-3" *ngFor="let pizza of pizzaDetails$ | async">
+            <div class="card example-card" id={{pizza.name}} style="width: 18rem;">
+                <img src={{pizza.url}} class="card-img-top" alt="pizza">
+                <div class="card-body" style="background-color: rgb(255, 255, 255);">
+                    <h3 class="pizza_head" style="font-weight: bold;">{{pizza.name}}</h3> <span>Rs.
+                        {{pizza.cost}}.00</span>
+                    <hr>
+                    <p class="card-text">{{pizza.description}}</p>
+                    <form [formGroup]=pizzaForm>
+                        <div style="position: absolute; bottom: 10px;">
+                            <input type="number" style="width: 50px; margin-right: 10px;"
+                                formControlName="{{pizza.name}}_qty"><span style=" font-weight: bold;"
+                                >Add</span>
+                        </div>
+                        <div style="position: absolute; bottom: 50px;">
+                            <div class="dropdown" style="display:block; margin-bottom:3px;">
+                                <select class="btn btn-secondary dropdown-toggle" type="button"
+                                    formControlName="{{pizza.name}}_toppings" style="width: 100%;">
+                                    <option value="">Toppings</option>
+                                    <option *ngFor="let topp of pizza.availableToppings">{{topp.name}}</option>
+                                </select>
+                            </div>
+
+                            <div class="dropdown" style="display:block;  margin-bottom:3px;">
+                                <select class="btn btn-secondary dropdown-toggle" type="button"
+                                    formControlName="{{pizza.name}}_crust" style="width: 100%;">
+                                    <option value="">Crust</option>
+                                    <option *ngFor="let crust of pizza.availableCrusts">{{crust.name}}</option>
+                                </select>
+                            </div>
+
+                            <div class="dropdown" style="display:block;">
+                                <select class="btn btn-secondary dropdown-toggle" type="button"
+                                    formControlName="{{pizza.name}}_size" style="width: 100%;">
+                                    <option value="">Size</option>
+                                    <option *ngFor="let size of pizza.availableSizes">{{size.size}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- Footer -->
+        <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-bottom">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <button class="btn btn-dark" (click) = "placeOrder()">Place Order</button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

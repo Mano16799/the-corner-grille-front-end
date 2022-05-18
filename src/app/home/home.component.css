@@ -1,0 +1,10 @@
+.carousel{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    
+}
+.image{
+    object-fit:fill;
+    height: 400px;
+}
